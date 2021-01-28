@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.visual {
+  height: 250px;
+  width: 100%;
+  margin: 0.5rem 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
+  width: clamp(45ch, 50%, 75ch);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: hsl(182, 29%, 96%);
+  padding: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+body {
+  font-family: system-ui, sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1rem
+}
+.form {
+  margin: 20px;
+}
+
+.field {
+  margin: 15px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+input[type=text] {
+  height: 24px;
+  width: 250px;
+  font-size: 16px;
+}
+
+input[type=submit] {
+  width: 65px;
+  height: 30px;
+  padding: 0;
+}
+
+.submitContainer {
+  margin-top: 16px;
+}
+
+.error {
+  margin-top: 12px;
+}
+
+.note {
+  font-size: .75rem;
 }

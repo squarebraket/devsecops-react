@@ -10,6 +10,10 @@ body {
   margin: 0.5rem 0;
 }
 
+.bigger {
+  height: 400px !important;
+}
+
 .card {
   width: clamp(45ch, 50%, 75ch);
   display: flex;
@@ -66,4 +70,25 @@ input[type=submit] {
 
 .note {
   font-size: .75rem;
+}
+
+ul {
+  width: clamp(48ch, 50%, 75ch);
+  margin: 0px;
+  padding: 8px 0;
+  background: #dad9d9;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+  margin-left: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
 }

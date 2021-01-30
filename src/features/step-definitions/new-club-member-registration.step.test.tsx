@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { defineFeature, loadFeature } from 'jest-cucumber';
 
 import React from 'react';
-import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import App from '../../App';
 
 
@@ -13,11 +13,9 @@ defineFeature(feature, test => {
     let id = -1;
 
     given('user is not a Frequent Flyer member', () => {
-      act(() => {
       render(<App />);
       const linkElement = screen.getByText('Frequent Flyer Club');
       expect(linkElement).toBeInTheDocument();
-    });
     })
 
     when('user registers on the Frequent Flyer program', async () => {
@@ -29,7 +27,9 @@ defineFeature(feature, test => {
       fireEvent.change(firstName, { target: { value: 'John' } });
       fireEvent.change(lastName, { target: { value: 'Appleseed' } });
 
+      // @ts-ignore
       expect(firstName.value).toBe('John');
+      // @ts-ignore
       expect(lastName.value).toBe('Appleseed');
 
 
@@ -41,7 +41,6 @@ defineFeature(feature, test => {
     });
 
     then('user should have a status of BRONZE', async () => {
-      // await waitFor(() => {expect(screen.getByTestId('status')).toBe('Bronze')});
       const status = screen.getByTestId('status');
       expect(status.textContent).toBe('Bronze');
     });
